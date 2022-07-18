@@ -145,3 +145,29 @@ This command will add your script to a queue in the server to run when the requi
 		- You can specify the sponsor in two ways:
 			- Add the following to a new line in the beginning of your script: `#SBATCH --acount=def-sponsor` (replace "sponsor" by the sponsor of your account)
 			- Add the name of the account to the sbatch command: `sbatch --acount=def-sponsor myScript.sh`
+
+### `srun`
+Will add your script to the queue, it is as if you were running the script in the session, so until it has finished running you won't be able to do anything else.
+- `srun --account=def-sponsor --mem-per-cpu=16G --time=01:00:00 myScript.sh`
+	- Will run myScript.sh, billing the account def-sponsor, using a maximum of 16Gb of memory and for maximum 1h.
+- `srun --account=def-sponsor --mem-per-cpu=16G --time=01:00:00 -i`
+	- Same as above, however there is no script to run because we want to use the resources interactively (`-i`). This is useful if you want to test a script that you know may use a lot of memory. When you are finished, if the time has not run out, you can use `Ctrl + D` or `exit` to go back to your session.
+
+### `salloc`
+Similar to using `srun -i`, will allow the interactive use of the resources allocated. When you are finished, if the time has not run out, you can use `Ctrl + D` or `exit` to go back to your session.
+
+### `squeue`
+Will show the queue of jobs waiting to run in the server.
+- `squeue`
+	- Will print ALL the jobs in the queue, submitted by every user of the server, which are running or waiting to run.
+	 |JOBID|USER|ACCOUNT|NAME|ST|TIME_LEFT|NODES|CPUS|GRES|MIN_MEM|NODELIST (REASON)|
+	 |:----|:---|:------|:---|:-|:--------|:----|:---|:---|:------|:----------------|
+  	 |123456   |smithj   |def-smithj  |simple_j   |R        |0:03    | 1    |1 4G cdr234  (None)|
+  123457   smithj   def-smithj  bigger_j  PD  2-00:00:00     1   16  (null)     16G (Priority)
+- `squeue -u user` or `sq`
+	- If your username is `user`, the two commands are the same. Will print all your jobs that are running or waiting to run
+
+### `scancel`
+
+
+
