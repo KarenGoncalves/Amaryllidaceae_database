@@ -27,14 +27,14 @@ When you start a new line, you start a new command. There are exceptions:
 
 `cd`: *change directory*: use `cd` followed by the path to a folder to change your location in the computer.
 
-## `ls`
+### `ls`
 *List*: used alone, it will print the contents of the current directory. If it is followed by a path to a directory, will print its contents. Options (letters or words preceded by "-" or "--", respectively) will change how and what is printed.
 - `ls -a` or `ls --all`
 	- Will print all contents of the working directory, including hidden files (which start with a dot, eg. .ssh).
 - `ls -alhs Desktop` or `ls --all -l --sort --human Desktop`
 	- Will print all the contents (`-a` or `--all` including hidden files) in the form of a list (`-l`) that includes the permissions of each file, their owners, the date of the last modification and their size in human format (`-h` or `--human`; 4Kb instead of 4000b) and sort them alphabetically (`-s` or `--sort`; other options can be used to change how to sort the files).
 	
-## `less` or `more`
+### `less` or `more`
 Softwares to open text files as read-only.
 - Use `less --help` or `man less` to see a manual on how to use `less` and `more --help` or `man more` to see how to use `more`
 - `less file1`
@@ -42,23 +42,29 @@ Softwares to open text files as read-only.
 - `less file1 file2 file3`
 	- Will open the three files to read. You can move between the files by typing `:` followed by `p` to look at the previous file or `n` to look at the next one.
 
-`cat` : prints file to the screen
+### `cat`
+Prints file to the screen
 - `cat file1`: will print the content of file1 to the screen. If the file is a binary file (.bam), or if it is compressed (.zip, .tar, .gz), the printed text will be all gibberish
 - `cat file1 file2`: will print the content of file1 followed by the content of file 2
 - `cat file1 > file2; cat file3 >> file2`: is the same as `cat file1 file3 > file2`. 
 
-`head` and `tail`: prints the first (`head`) or last (`tail`) 10 lines of a file to the screen. If you have a big file and you just want to see if it looks fine or what it contains, use this
+### `head` and `tail`
+Prints the first (`head`) or last (`tail`) 10 lines of a file to the screen. If you have a big file and you just want to see if it looks fine or what it contains, use this
 - `head file1`: will print the first 10 lines of file1
 - `head -n 20 file1`: the option `-n` allows you to specify the number of lines you want to be printed
 
-`grep`: searches a text in a file
+### `grep`
+Searches a text in a file
 - `grep "word" file1`: will print to the screen every line of file 1 that contains "word" in it.
 
-`clear`: will clear you screen, so you will not be able to see the previous commands by looking up or scrolling. You can still use the up and down arrows to look at the commands you have used in the session.
+### `clear`
+Will clear you screen, so you will not be able to see the previous commands by looking up or scrolling. You can still use the up and down arrows to look at the commands you have used in the session.
 
-`history`: see the list of commands you have used in the computer with the date and time of use. Does not contain ALL the commands you have ever used, since old lines are deleted. So if you think you may need to see the command again, copy it to a file.
+### `history`
+Shows the list of commands you have used in the computer with the date and time of use. Does not contain ALL the commands you have ever used, since old lines are deleted. So if you think you may need to see the command again, copy it to a file.
 
-`cp`: *copy*: use `cp` followed by the path of the file you want to copy and the path to where you want to put the copy.
+### `cp`
+*Copy*: use `cp` followed by the path of the file you want to copy and the path to where you want to put the copy.
 - `cp file1 file2`
 	- Creates a copy of file1 and names it file2. 
 - `cp -r folder1 folder2`
@@ -68,7 +74,8 @@ Softwares to open text files as read-only.
 - `cp -v -r folder1 folder2`
 	- Creates a copy of folder1 and names it folder2. The option `-v` (verbose) will make the computer print to the screen what it is doing (copied folder1/file1 to folder2/file; copied folder1/file2 to folder2/file2; etc). 
 
-`rm`: *remove*: use `rm` followed by the path to a file or folder you wish to delete. It will delete FOREVER, there is no trashbin when you use `rm`, so use with care
+### `rm`
+*Remove*: use `rm` followed by the path to a file or folder you wish to delete. It will delete FOREVER, there is no trashbin when you use `rm`, so use with care
 - `rm file1 file2 file3`
 	- Delete all files listed after the command
 - `rm -r folder1`
@@ -78,16 +85,18 @@ Softwares to open text files as read-only.
 - `rm -v *`
 	- Deletes everything in the current folder, except folders, and prints to the screen the files it deleted while doing it.
 
-`rmdir`: remove directory: use with the path to a folder to delete it FOREVER (same as `rm`). Only works if the folder is empty.
+#### `rmdir`: remove directory: use with the path to a folder to delete it FOREVER (same as `rm`). Only works if the folder is empty.
 
-`ssh`: *secure shell protocol*: will allow you to connect to a server and write commands into it.
+### `ssh`
+*Secure shell protocol*: will allow you to connect to a server and write commands into it.
 - `ssh user@server.ca`
 	- After asking for the password, will log user to server.ca.
 - `ssh -i myKey.ppk user@server.ca`
 	- The option `-i` means "identity file", ssh will use this file as the password (you need to have it in your local computer and copy it to the server.
 	- To create an identity file (also known as ssh-key) follow the instructions <span style="font-weight: bold; text-decoration: underline">[here](https://docs.alliancecan.ca/wiki/Generating_SSH_keys_in_Windows)</span>
 
-`rsync`: will copy files and folders from one location to another. Use it with the path of the files and folders you wish to copy and the path to where you want the copy to be placed. You will be required to put your password with this command.
+### `rsync`
+Will copy files and folders from one location to another. Use it with the path of the files and folders you wish to copy and the path to where you want the copy to be placed. You will be required to put your password with this command.
 - `rsync file1 file2 file3 user@server.ca:/home/user/folder1`
 	- Will copy the files (file1, file2 and file3) which are in the local computer (eg. the user's laptop) to the directory `/home/user/folder1` which is the remote computer accessed as `server.ca`. The `:` separates the remote computer name from the path to the folder of interest. Here, the path to the folder in the remote computer MUST be the absolute path.
 	- If the option `-v` is used, the computer will print what is happening (if the connection to the server was successfull, if it found the folder indicated in the command, what it is copying and if it was successfull)
@@ -99,7 +108,8 @@ Softwares to open text files as read-only.
 - `rsync -r user@server.ca:/home/user/folder1/ folder1`
 	- This command will copy the contents of /home/user/folder1/ from the server.ca to our local computer in folder1
 
-`nano`: software to edit text in the server. Used alone will open an empty file. When you try to close the file (Ctrl + x) will ask if you want to save it and ask for a name for the path where to save it.
+### `nano`
+Software to edit text in the server. Used alone will open an empty file. When you try to close the file (Ctrl + x) will ask if you want to save it and ask for a name for the path where to save it.
 - `nano file1`
 	- Will open file1 for edition. If file1 does not exist, will create it.
 - `nano *`
@@ -107,7 +117,7 @@ Softwares to open text files as read-only.
 
 ## Commands specific to the server
 
-`module`
+### `module`
 - `module avail`
 	- Shows the softwares (here they are called modules) that are installed (available) in the server.
 - `module spider softw`
@@ -121,7 +131,8 @@ Softwares to open text files as read-only.
 	- If you want an specific version of a software, you need to put it in the command (eg. `module load software1/1.0`)
 	- If you have a version of a software loaded and you try to load another, the previous one will be unloaded, meaning you cannot load two versions of a software at the same time.
 
-`sbatch`: this command will add your script to a queue in the server to run when the required resourcers (time, memory, number of central processing units -- CPUs) are available. You cannot be in your `home` directory to run it or in folders inside it. You need to move to `scratch` or `project` to be able to run.
+### `sbatch`
+This command will add your script to a queue in the server to run when the required resourcers (time, memory, number of central processing units -- CPUs) are available. You cannot be in your `home` directory to run it or in folders inside it. You need to move to `scratch` or `project` to be able to run.
 - `sbatch myScript.sh`
 	- Will add myScript.sh to the queue
 	- The script must start with the following lines:
