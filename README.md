@@ -27,13 +27,15 @@ When you start a new line, you start a new command. There are exceptions:
 
 `cd`: *change directory*: use `cd` followed by the path to a folder to change your location in the computer.
 
-`ls`: *list*: used alone, it will print the contents of the current directory. If it is followed by a path to a directory, will print its contents. Options (letters or words preceded by "-" or "--", respectively) will change how and what is printed.
+## `ls`
+*List*: used alone, it will print the contents of the current directory. If it is followed by a path to a directory, will print its contents. Options (letters or words preceded by "-" or "--", respectively) will change how and what is printed.
 - `ls -a` or `ls --all`
 	- Will print all contents of the working directory, including hidden files (which start with a dot, eg. .ssh).
 - `ls -alhs Desktop` or `ls --all -l --sort --human Desktop`
 	- Will print all the contents (`-a` or `--all` including hidden files) in the form of a list (`-l`) that includes the permissions of each file, their owners, the date of the last modification and their size in human format (`-h` or `--human`; 4Kb instead of 4000b) and sort them alphabetically (`-s` or `--sort`; other options can be used to change how to sort the files).
 	
-`less` or `more`: softwares to open text files as read-only.
+## `less` or `more`
+Softwares to open text files as read-only.
 - Use `less --help` or `man less` to see a manual on how to use `less` and `more --help` or `man more` to see how to use `more`
 - `less file1`
 	- Will open file1 to read. If you want to look for a word, type `/` then type the word.
