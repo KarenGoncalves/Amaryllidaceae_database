@@ -160,10 +160,10 @@ Similar to using `srun -i`, will allow the interactive use of the resources allo
 Will show the queue of jobs waiting to run in the server.
 - `squeue`
 	- Will print ALL the jobs in the queue, submitted by every user of the server, which are running or waiting to run.
-	 |JOBID|USER|ACCOUNT|NAME|ST|TIME_LEFT|NODES|CPUS|GRES|MIN_MEM|NODELIST (REASON)|
-	 |:----|:---|:------|:---|:-|:--------|:----|:---|:---|:------|:----------------|
-  	 |123456   |smithj   |def-smithj  |simple_j   |R        |0:03    | 1    |1 4G cdr234  (None)|
-  123457   smithj   def-smithj  bigger_j  PD  2-00:00:00     1   16  (null)     16G (Priority)
+	 |JOBID    |USER     |ACCOUNT   |NAME    |ST|TIME_LEFT|NODES|CPUS|GRES  |MIN_MEM|NODELIST (REASON)|
+	 |:--------|:--------|:---------|:-------|:-|:---------|:----|:---|:-----|:------|:----------------|
+  	 |123456   |smithj   |def-smithj|simple_j|R |0:03      | 1   |1   |(null)|4G     |cdr234     (None)|
+         | 123457  |smithj   |def-smithj|bigger_j|PD|2-00:00:00|     1 |  16 | (null)|     16G (Priority)|
 - `squeue -u user` or `sq`
 	- If your username is `user`, the two commands are the same. Will print all your jobs that are running or waiting to run
 
