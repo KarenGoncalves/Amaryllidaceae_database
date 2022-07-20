@@ -1,4 +1,4 @@
-# Command line - shell
+# Glossary of commands
 
 Absolute path: includes the root (starts with a "/")
 
