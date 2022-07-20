@@ -165,10 +165,10 @@ Will show the queue of jobs waiting to run in the server.
 	- If your username is `user`, the two commands are the same. Will print all your jobs that are running or waiting to run
 	- Below is an example of what the result of `squeue -u smithj` would look like
 	
-	 |JOBID    |USER     |ACCOUNT   |NAME    |ST|TIME_LEFT|NODES|CPUS|GRES  |MIN_MEM|NODELIST (REASON)|
-	 |:--------|:--------|:---------|:-------|:-|:---------|:----|:---|:-----|:------|:----------------|
-  	 |123456   |smithj   |def-smithj|simple_j|R |0:03      | 1   |1   |(null)|4G     |cdr234     (None)|
-         | 123457  |smithj   |def-smithj|bigger_j|PD|2-00:00:00|     1 |  16 | (null)|     16G| (Priority)|
+	|JOBID    |USER     |ACCOUNT   |NAME    |ST|TIME_LEFT|NODES|CPUS|GRES  |MIN_MEM|NODELIST (REASON)|
+	|:--------|:--------|:---------|:-------|:-|:---------|:----|:---|:-----|:------|:----------------|
+	|123456   |smithj   |def-smithj|simple_j|R |0:03      | 1   |1   |(null)|4G     |cdr234     (None)|
+	| 123457  |smithj   |def-smithj|bigger_j|PD|2-00:00:00|     1 |  16 | (null)|     16G| (Priority)|
 	 
 	- JOBID: each time you using `sbatch`, `srun` or `salloc`, you create a job and it is assigned an ID, you can use this ID to get information about the job.
 	- Name: Unless you specify a different name (by using `--jobname=someName` or `-j someName`) it will be the name of the script submitted
