@@ -29,10 +29,16 @@ After you log in into the server and copy the fasta sequence into your `$HOME` f
 - Here I am using the filtered database, if you want to use the unfiltered one, replace the path of the database with the one indicated above.
 
 ```
+#########################################################################################
+### Replace the text that comes after the "=" in each line by the correct one for you ###
+#########################################################################################
 mySequence=${HOME}/myFasta.fasta
 account=def-desgagne
-database=${HOME}/projects/${account}/amaryllidaceaeData/blast_dbs/amaryllidaceae
+database=/project/${account}/amaryllidaceaeData/blast_dbs/Amaryllidaceae
 
+########################
+##### Run the code #####
+########################
 module load StdEnv/2020 gcc/9.3.0
 module load blast+/2.12.0
 
@@ -95,7 +101,7 @@ After you log in into the server and copy the fasta sequence into your `$HOME` f
 #########################################################################################
 mySequence=${HOME}/myFasta.fasta
 account=def-desgagne
-database=/project/${account}/amaryllidaceaeData/blast_dbs/Amaryllidaceae
+database=/project/${ACCOUNT}/uniprot/uniprot_2022_03
 
 ########################
 ##### Run the code #####
