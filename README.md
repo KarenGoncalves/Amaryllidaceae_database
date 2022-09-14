@@ -4,15 +4,17 @@ Check the [wiki](https://github.com/KarenGoncalves/Amaryllidaceae_database/wiki)
 
 ## Commands specific to the server
 
-### `module`
+### Softwares
+In the server, you do not need to install most softwares, as they are already installed and are called modules. These modules are what you need to load to your session to be able to use the software.
+
+### Available softwares
 - `module avail`
-	- Shows the softwares (here they are called modules) that are installed (available) in the server.
-- `module spider softw`
-	- Shows at all the modules that are installed which contain the words 'softw'. Will show a list of all the versions of those softwares.
-- `module spider software1`
-	- If software1 is installed, will show its description and all the versions of it that are available.
-- `module spider software1/1.0`
-	- If the software1/1.0 is installed, will show its description and how to load it to your session in the server.
+	- Shows the softwares that are installed (available) in the server.
+- module spider
+	- `module spider softw` shows at all the modules that are installed which contain the words 'softw'. Will show a list of all the versions of those softwares.
+	- `module spider software1/1.0` will show a description for software1/1.0, if it is installed,  and how to load it to your session in the server.
+- `module keyword softw`
+	- Similar to `module spider`, it will search for the word `softw` among the installed modules, but the search extends to the description of the software. This is useful when you are searching for a software that does something specific but you don't need one specific.
 - `module load software1`
 	- If software1 is installed in the server AND you have loaded all the softwares you need for software1 to work, will load the default version of software1 to your session.
 	- If you want an specific version of a software, you need to put it in the command (eg. `module load software1/1.0`)
@@ -52,10 +54,10 @@ Will show the queue of jobs waiting to run in the server.
 	- If your username is `user`, the two commands are the same. Will print all your jobs that are running or waiting to run
 	- Below is an example of what the result of `squeue -u smithj` would look like
 	
-	|JOBID    |USER     |ACCOUNT   |NAME    |ST|TIME_LEFT|NODES|CPUS|GRES  |MIN_MEM|NODELIST (REASON)|
+	|JOBID    |USER     |ACCOUNT   |NAME    |ST|TIME_LEFT |NODES|CPUS|GRES  |MIN_MEM|NODELIST (REASON)|
 	|:--------|:--------|:---------|:-------|:-|:---------|:----|:---|:-----|:------|:----------------|
 	|123456   |smithj   |def-smithj|simple_j|R |0:03      | 1   |1   |(null)|4G     |cdr234     (None)|
-	| 123457  |smithj   |def-smithj|bigger_j|PD|2-00:00:00|     1 |  16 | (null)|     16G| (Priority)|
+	| 123457  |smithj   |def-smithj|bigger_j|PD|2-00:00:00| 1   | 16 |(null)| 16G   |       (Priority)|
 	 
 	- JOBID: each time you using `sbatch`, `srun` or `salloc`, you create a job and it is assigned an ID, you can use this ID to get information about the job.
 	- Name: Unless you specify a different name (by using `--jobname=someName` or `-j someName`) it will be the name of the script submitted
