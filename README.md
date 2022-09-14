@@ -74,7 +74,8 @@ Will show the queue of jobs waiting to run in the server.
 	- ST: status of the job. 
 		- `R` = running
 		- `PD` = pending, meaning the resources needed are not available so you need to wait
-		- `CG` = completing; `CA` = cancelled
+		- `CG` = completing
+		- `CA` = cancelled
 		- See other status codes <span style="font-weight: bold; text-decoration: underline">[here](https://slurm.schedmd.com/squeue.html#lbAG)</span>
 	- Nodes: basically a groupping of CPUs
 	- MIN_MEM: memory requested to run the job
