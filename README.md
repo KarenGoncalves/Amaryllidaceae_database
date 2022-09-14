@@ -25,7 +25,7 @@ In the server, you do not need to install most softwares, as they are already in
 	module load StdEnv/2020  gcc/9.3.0  blast+/2.12.0
 	module save blast
 	```
-	Now, every time you want to run blast, you just need to run the code below and then add your script for blast!
+	- Now, every time you want to run blast, you just need to run the code below and then add your script for blast!
 	```
 	module restore blast
 	```
