@@ -1,3 +1,5 @@
+## Useful commands
+
 Check the [wiki](https://github.com/KarenGoncalves/Amaryllidaceae_database/wiki) to see the list of many useful commands, what they do and how to use them. 
 
 ## Commands specific to the server
