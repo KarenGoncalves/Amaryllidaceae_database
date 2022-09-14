@@ -19,6 +19,16 @@ In the server, you do not need to install most softwares, as they are already in
 	- If software1 is installed in the server AND you have loaded all the softwares you need for software1 to work, will load the default version of software1 to your session.
 	- If you want an specific version of a software, you need to put it in the command (eg. `module load software1/1.0`)
 	- If you have a version of a software loaded and you try to load another, the previous one will be unloaded, meaning you cannot load two versions of a software at the same time.
+- `module save my_collection` and `module restore my_collection`
+	- If you use many softwares frequently, you can create collections that will allow you to load them all together. For example, the code below creates a collection with the modules you need to run blast, then saves it to the collection named "blast":
+	```
+	module load StdEnv/2020  gcc/9.3.0  blast+/2.12.0
+	module save blast
+	```
+	Now, every time you want to run blast, you just need to run the code below and then add your script for blast!
+	```
+	module restore blast
+	```
 
 ### `sbatch`
 This command will add your script to a queue in the server to run when the required resourcers (time, memory, number of central processing units -- CPUs) are available. You cannot be in your `${HOME}` directory to run it or in folders inside it. You need to move to `${SCRATCH}` or `${PROJECT}` to be able to run.
