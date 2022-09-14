@@ -19,14 +19,14 @@ Check the [wiki](https://github.com/KarenGoncalves/Amaryllidaceae_database/wiki)
 	- If you have a version of a software loaded and you try to load another, the previous one will be unloaded, meaning you cannot load two versions of a software at the same time.
 
 ### `sbatch`
-This command will add your script to a queue in the server to run when the required resourcers (time, memory, number of central processing units -- CPUs) are available. You cannot be in your `home` directory to run it or in folders inside it. You need to move to `scratch` or `project` to be able to run.
+This command will add your script to a queue in the server to run when the required resourcers (time, memory, number of central processing units -- CPUs) are available. You cannot be in your `${HOME}` directory to run it or in folders inside it. You need to move to `${SCRATCH}` or `${PROJECT}` to be able to run.
 - `sbatch myScript.sh`
 	- Will add myScript.sh to the queue
 	- The script must start with the following lines:
 		- `#!/bin/bash`
 			- Specifies the software (bash) that will be able to read this script (we give it's absolute path, if you type `ls /bin` in the server, you will find the file 'bash')
 		- `#SBATCH --time=00-00:00:00`
-			- Normally anything that comes after `#` is not read by the computer, but since it is followed by 'SBATCH`, the software `sbatch` will read it and interpret that you are asking for this amount of time in the queue.
+			- Normally anything that comes after `#` is not read by the computer, but since it is followed by 'SBATCH', the software `sbatch` will read it and interpret that you are asking for this amount of time in the queue.
 	- If nothing else is given, the software `sbatch` will allocated the minimum amount of memory and CPUs and will find the sponsor of your account to create the bill the use of the server in the name of the sponsor
 		- If you have more than one sponsor (eg. laboidp and desgagne) there will be an error, because the server will not know who they should bill.
 		- You can specify the sponsor in two ways:
